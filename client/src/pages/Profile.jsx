@@ -31,6 +31,7 @@ export default function Profile() {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
+  const [noListing, setNoListing] = useState(false);
   const dispatch = useDispatch();
 
   // Firebase image storage rule
@@ -136,6 +137,13 @@ export default function Profile() {
         return;
       }
       setUserListings(data);
+      console.log(data);
+      if (data.length === 0) {
+        setNoListing(true);
+        setTimeout(() => {
+          setNoListing(false);
+        }, 2300);
+      }
     } catch (error) {
       setShowListingsError(true);
     }
@@ -248,8 +256,11 @@ export default function Profile() {
         Show Listings
       </button>
       <p className="text-red-700 mt-5">
-        {showListingsError ? "Error showing listings" : ""}
+        {showListingsError ? "Error showing listing" : ""}
       </p>
+      {noListing && (
+        <p className="text-red-700 mt-5">You've not created any listing</p>
+      )}
       {userListings && userListings.length > 0 && (
         <div className="flex flex-col gap-4">
           <h1 className="text-center mt-7 text-2xl font-semibold">
