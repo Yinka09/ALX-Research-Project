@@ -25,7 +25,7 @@ export default function Header() {
   }, [location.search]);
   return (
     <header className="bg-slate-200 shadow-md">
-      <div className="flex justify-between items-center max-w-6xl mx-auto py-3 px-5">
+      <div className="flex justify-between items-center max-w-6xl mx-auto py-3 px-5 md:px-10">
         <Link to="/">
           <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
             <span className="text-slate-500">Realty</span>
