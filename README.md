@@ -20,6 +20,7 @@ RealtyHub is a robust real estate market platform built on the MERN stack (Mongo
 - Clone the Repository:
 
   git clone https://github.com/your-username/RealtyHub.git
+
   cd RealtyHub
 
 - Install Dependencies:
