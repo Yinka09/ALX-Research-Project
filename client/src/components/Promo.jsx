@@ -4,7 +4,6 @@ import bgImage1 from "../assets/images/bg-image1.jpg";
 import bgImage2 from "../assets/images/bg-image2.jpg";
 import bgImage3 from "../assets/images/bg-image3.jpg";
 import bgImage4 from "../assets/images/bg-image4.jpg";
-import bgImage5 from "../assets/images/bg-image5.jpg";
 import bgImage6 from "../assets/images/bg-image6.jpg";
 import bgImage7 from "../assets/images/bg-image7.jpg";
 
