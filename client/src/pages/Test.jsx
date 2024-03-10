@@ -24,8 +24,8 @@ export default function Header() {
     }
   }, [location.search]);
   return (
-    <header className="bg-transparent ">
-      <div className="flex justify-between items-center max-w-6xl mx-auto py-3 px-5 md:px-10">
+    <header className="bg-purple-950 shadow-md">
+      <div className="flex justify-between items-center max-w-6xl mx-auto py-3 px-5">
         <Link to="/">
           <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
             <span className="text-violet-100">Realty</span>
@@ -34,7 +34,7 @@ export default function Header() {
         </Link>
         <form
           onSubmit={handelSubmit}
-          className="bg-slate-100 p-2 rounded-lg flex item-center"
+          className="bg-slate-100 p-3 rounded-lg flex item-center"
         >
           <input
             type="text"
@@ -47,14 +47,14 @@ export default function Header() {
             <FaSearch className="text-slate-600" />
           </button>
         </form>
-        <ul className="flex  ">
+        <ul className="flex gap-4 ">
           <Link to="/">
-            <li className="hidden sm:inline text-white hover:underline font-semibold pe-5 ">
+            <li className="hidden sm:inline text-violet-100 hover:underline">
               Home
             </li>
           </Link>
           <Link to="/about">
-            <li className="hidden sm:inline text-white hover:underline font-semibold pe-5">
+            <li className="hidden sm:inline text-violet-100 hover:underline">
               About
             </li>
           </Link>

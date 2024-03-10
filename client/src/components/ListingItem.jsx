@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
 
 export default function ListingItem({ listing }) {
+  useEffect(() => {
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 140;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", reveal);
+
+    // Don't forget to remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", reveal);
+    };
+  }, []); // Empty dependency array means this effect runs once after the initial render
+
   return (
-    <div className="bg-white shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-full sm:w-[280px] md:w-[260px] xl:w-[380px]">
+    <div className=" reveal mb-7 bg-white bg-opacity-98 shadow-md hover:shadow-lg transition-shadow overflow-hidden myborder w-full sm:w-[280px] md:w-[260px] lg:w-[200px] xl:w-[390px] mx-auto">
       <Link to={`/listing/${listing._id}`}>
         <img
           src={listing.imageUrls[0]}

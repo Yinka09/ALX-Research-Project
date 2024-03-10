@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/* body {
+  background: rgba(0, 0, 0, 0.9)
+    url("../src/assets/images/pexels-binyamin-mellish-106399.jpg") no-repeat
+    center center fixed;
+  background-size: cover;
+  background-position: right top;
+  height: 100vh;
+} */
+
 body {
-  background-color: rgb(241, 245, 241);
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.myFont {
+  font-family: "Playfair Display", serif;
+}
+
+.home {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+    url("../src/assets/images/bg-image2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.myborder {
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
 }

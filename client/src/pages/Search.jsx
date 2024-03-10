@@ -132,8 +132,8 @@ export default function Search() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row">
-      <div className="p-7 md:p-10 border-b-2 md:border-r-2 md:min-h-screen">
+    <div className="flex flex-col md:flex-row bg-white pb-32">
+      <div className="p-7 md:p-6 border-b-2 md:border-r-2 md:min-h-screen bg-white bg-opacity-98 sticky top-0 self-start ">
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
           <div className="flex items-center gap-2">
             <label className="whitespace-nowrap font-semibold">
@@ -228,16 +228,17 @@ export default function Search() {
               <option value="createdAt_asc">Oldest</option>
             </select>
           </div>
-          <button className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95">
+          <button className="bg-purple-950 text-white p-3 rounded-lg uppercase hover:opacity-95">
             Search
           </button>
         </form>
       </div>
-      <div className="flex-1">
-        <h1 className="text-3xl font-semibold border-b p-3 text-slate-700 mt-5">
+      <div className="flex-2">
+        <h1 className="text-3xl font-semibold border-b px-5 py-5 text-purple-950 bg-white bg-opacity-95">
           Listing results:
         </h1>
-        <div className="p-7 flex flex-wrap gap-4">
+
+        <div className="p-7 flex flex-wrap gap-4 reveal ">
           {!loading && listings.length === 0 && (
             <p className="text-xl text-slate-700">No listing found!</p>
           )}
@@ -252,16 +253,15 @@ export default function Search() {
             listings.map((listing) => (
               <ListingItem key={listing._id} listing={listing} />
             ))}
-
-          {showMore && (
-            <button
-              onClick={onShowMoreClick}
-              className="text-green-700 hover:underline p-7 text-center w-full"
-            >
-              Show More
-            </button>
-          )}
         </div>
+        {showMore && (
+          <button
+            onClick={onShowMoreClick}
+            className="text-white font-semibold hover:underline p-3 block text-center mx-auto text-xs rounded-lg bg-purple-950 hover:opacity-90"
+          >
+            Show More
+          </button>
+        )}
       </div>
     </div>
   );

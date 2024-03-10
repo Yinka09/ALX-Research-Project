@@ -168,9 +168,9 @@ export default function Profile() {
     }
   };
   return (
-    <div className="p-3 max-w-lg mx-auto">
-      <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <div className="py-3 px-10 max-w-lg mx-auto bg-white opacity-98 my-20 rounded-lg ">
+      <h1 className="text-3xl font-semibold text-center my-10">Profile</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4 px-1">
         <input
           onChange={(e) => setFile(e.target.files[0])}
           type="file"
@@ -222,12 +222,12 @@ export default function Profile() {
         />
         <button
           disabled={loading}
-          className="bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
+          className="bg-purple-950 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
         >
           {loading ? "Loading" : "Update"}
         </button>
         <Link
-          className="bg-green-700 text-white
+          className="bg-violet-700 text-white
           p-3
           rounded-lg
           uppercase text-center hover:opacity-95"
@@ -239,11 +239,14 @@ export default function Profile() {
       <div className="flex justify-between mt-5">
         <span
           onClick={handleDeleteUser}
-          className="text-red-700 cursor-pointer"
+          className="text-red-700 cursor-pointer hover:underline"
         >
           Delete account
         </span>
-        <span onClick={handleSignOut} className="text-red-700 cursor-pointer">
+        <span
+          onClick={handleSignOut}
+          className="text-red-700 cursor-pointer hover:underline"
+        >
           Sign out
         </span>
       </div>
@@ -252,7 +255,10 @@ export default function Profile() {
       <p className="text-green-700 mt-5">
         {updateSuccess ? "User is updated successfully!" : ""}
       </p>
-      <button onClick={handleShowListings} className="text-green-700 w-full">
+      <button
+        onClick={handleShowListings}
+        className="text-purple-950 w-full hover:underline font-semibold"
+      >
         Show Listings
       </button>
       <p className="text-red-700 mt-5">
@@ -264,7 +270,7 @@ export default function Profile() {
       {userListings && userListings.length > 0 && (
         <div className="flex flex-col gap-4">
           <h1 className="text-center mt-7 text-2xl font-semibold">
-            Your Listings
+            My Listings
           </h1>
           {userListings.map((listing) => (
             <div

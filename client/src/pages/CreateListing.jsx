@@ -158,7 +158,7 @@ export default function CreateListing() {
     }
   };
   return (
-    <main className="p-3 max-w-4xl mx-auto">
+    <main className=" max-w-4xl mx-auto bg-white my-10 rounded-lg opacity-98 pt-3 pb-10 px-10 ">
       <h1 className="text-3xl font-semibold text-center my-7">
         Create a Listing
       </h1>
@@ -334,7 +334,7 @@ export default function CreateListing() {
               onClick={handleImageSubmit}
               type="button"
               disabled={uploading}
-              className="p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80"
+              className="p-3 text-purple-950 text-sm border border-purple-950 rounded uppercase hover:shadow-lg disabled:opacity-80"
             >
               {uploading ? "Uploading..." : "Upload"}
             </button>
@@ -364,7 +364,7 @@ export default function CreateListing() {
             ))}
           <button
             disabled={loading || uploading}
-            className="p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
+            className="p-3 bg-purple-950 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
           >
             {loading ? "Creating..." : "Create listing"}
           </button>

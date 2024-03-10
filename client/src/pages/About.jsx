@@ -2,8 +2,8 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="py-10 px-4 max-w-6xl mx-auto text-justify">
-      <h1 className="text-4xl font-bold mb-4 text-slate-800">
+    <div className=" px-20 max-w-6xl md:mx-20 lg:mx-36 xl:mx-auto text-justify bg-white my-8 py-12 rounded-lg shadow-lg">
+      <h1 className="text-4xl font-bold mb-4 text-slate-800 text-center">
         About RealtyHub
       </h1>
       <p className="mb-4 text-slate-700">
