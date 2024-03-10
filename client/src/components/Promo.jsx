@@ -1,4 +1,13 @@
 import { Link } from "react-router-dom";
+import bgImage0 from "../assets/images/bg-image0.jpg";
+import bgImage1 from "../assets/images/bg-image1.jpg";
+import bgImage2 from "../assets/images/bg-image2.jpg";
+import bgImage3 from "../assets/images/bg-image3.jpg";
+import bgImage4 from "../assets/images/bg-image4.jpg";
+import bgImage5 from "../assets/images/bg-image5.jpg";
+import bgImage6 from "../assets/images/bg-image6.jpg";
+import bgImage7 from "../assets/images/bg-image7.jpg";
+
 export default function Promo() {
   return (
     <div className="relative overflow-hidden bg-white">
@@ -25,37 +34,14 @@ export default function Promo() {
                     <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100 reveal">
                         <img
-                          src="../src/assets/images/bg-image2.jpg"
+                          src={bgImage2}
                           alt=""
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg reveal">
                         <img
-                          src="../src/assets/images/bg-image4.jpg"
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                        />
-                      </div>
-                    </div>
-                    <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                      <div className="h-64 w-44 overflow-hidden rounded-lg reveal">
-                        <img
-                          src="../src/assets/images/bg-image1.jpg"
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                        />
-                      </div>
-                      <div className="h-64 w-44 overflow-hidden rounded-lg reveal">
-                        <img
-                          src="../src/assets/images/bg-image0.jpg"
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                        />
-                      </div>
-                      <div className="h-64 w-44 overflow-hidden rounded-lg reveal">
-                        <img
-                          src="../src/assets/images/bg-image7.jpg"
+                          src={bgImage4}
                           alt=""
                           className="h-full w-full object-cover object-center"
                         />
@@ -64,14 +50,37 @@ export default function Promo() {
                     <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="h-64 w-44 overflow-hidden rounded-lg reveal">
                         <img
-                          src="../src/assets/images/bg-image6.jpg"
+                          src={bgImage1}
                           alt=""
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg reveal">
                         <img
-                          src="../src/assets/images/bg-image3.jpg"
+                          src={bgImage0}
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="h-64 w-44 overflow-hidden rounded-lg reveal">
+                        <img
+                          src={bgImage7}
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                    </div>
+                    <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                      <div className="h-64 w-44 overflow-hidden rounded-lg reveal">
+                        <img
+                          src={bgImage6}
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="h-64 w-44 overflow-hidden rounded-lg reveal">
+                        <img
+                          src={bgImage3}
                           alt=""
                           className="h-full w-full object-cover object-center"
                         />
