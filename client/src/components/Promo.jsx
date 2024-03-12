@@ -6,17 +6,18 @@ import bgImage3 from "../assets/images/bg-image3.jpg";
 import bgImage4 from "../assets/images/bg-image4.jpg";
 import bgImage6 from "../assets/images/bg-image6.jpg";
 import bgImage7 from "../assets/images/bg-image7.jpg";
+import bgImage8 from "../assets/images/bg-image8.jpg";
 
 export default function Promo() {
   return (
     <div className="relative overflow-hidden bg-white">
-      <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 md:pb-80 lg:pb-48 lg:pt-40">
+      <div className="pb-80 pt-0 sm:pb-40 sm:pt-24 md:pb-80 lg:pb-48 lg:pt-40">
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
-          <div className="sm:max-w-lg">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl myFont">
+          <div className=" sm:px-0 sm:max-w-lg">
+            <h1 className="text-center sm:text-left text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl myFont">
               Your Dream Space Awaits
             </h1>
-            <p className="mt-4 text-xl text-gray-500">
+            <p className="text-justify sm:text-left mt-4 text-xl text-gray-500">
               Unleashing the Power of Seamless Real Estate Transactions.Explore
               RealtyHub for Exclusive Property Experiences!
             </p>
@@ -42,7 +43,7 @@ export default function Promo() {
                         <img
                           src={bgImage4}
                           alt=""
-                          className="h-full w-full object-cover object-center"
+                          className="h-full w-full object-cover object-center hover:scale-105"
                         />
                       </div>
                     </div>
@@ -51,21 +52,21 @@ export default function Promo() {
                         <img
                           src={bgImage1}
                           alt=""
-                          className="h-full w-full object-cover object-center"
+                          className="h-full w-full object-cover object-center hover:scale-105"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg reveal">
                         <img
-                          src={bgImage0}
+                          src={bgImage8}
                           alt=""
-                          className="h-full w-full object-cover object-center"
+                          className="h-full w-full object-cover object-center hover:scale-105"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg reveal">
                         <img
                           src={bgImage7}
                           alt=""
-                          className="h-full w-full object-cover object-center"
+                          className="h-full w-full object-cover object-center hover:scale-105"
                         />
                       </div>
                     </div>
@@ -74,14 +75,14 @@ export default function Promo() {
                         <img
                           src={bgImage6}
                           alt=""
-                          className="h-full w-full object-cover object-center"
+                          className="h-full w-full object-cover object-center hover:scale-105"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg reveal">
                         <img
                           src={bgImage3}
                           alt=""
-                          className="h-full w-full object-cover object-center"
+                          className="h-full w-full object-cover object-center hover:scale-105"
                         />
                       </div>
                     </div>
@@ -92,7 +93,7 @@ export default function Promo() {
               <Link
                 to="/search"
                 href="#"
-                className="inline-block rounded-md border border-transparent bg-purple-950 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+                className="inline-block rounded-md border border-transparent bg-yellow-950 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
               >
                 View more
               </Link>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -44,8 +44,9 @@ export default function SignIn() {
       dispatch(signInFailure(error.message));
     }
   };
+
   return (
-    <div className="py-10 px-10 max-w-lg mx-auto bg-white opacity-98 mt-20 rounded-lg ">
+    <div className="py-10 px-10 max-w-lg mx-6 sm:mx-auto bg-white opacity-98 mt-20 mb-28 rounded-lg ">
       <h1 className="text-3xl text-center font-semibold my-3">Sign In</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
@@ -64,7 +65,7 @@ export default function SignIn() {
         />
         <button
           disabled={loading}
-          className="bg-purple-950 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
+          className="bg-green-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
         >
           {loading ? "Loading" : "Sign In"}
         </button>

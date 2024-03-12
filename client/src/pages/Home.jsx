@@ -79,7 +79,7 @@ export default function Home() {
   return (
     <div>
       {/* top */}
-      <div className=" flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto">
+      <div className=" flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto ">
         <h1 className="text-white font-bold text-3xl lg:text-7xl md:ps-4 myFont">
           Find your next <span className="">perfect</span>
           <br />
@@ -98,7 +98,7 @@ export default function Home() {
         </Link>
       </div>
       {/* swiper */}
-      <div className="bg-white reveal">
+      <div className="bg-white reveal ">
         <Swiper navigation>
           {offerListings &&
             offerListings.length > 0 &&
@@ -109,7 +109,7 @@ export default function Home() {
                     background: `url(${listing.imageUrls[0]}) center no-repeat`,
                     backgroundSize: "cover",
                   }}
-                  className="h-[500px]"
+                  className="h-[500px] "
                   key={listing._id}
                 ></div>
               </SwiperSlide>

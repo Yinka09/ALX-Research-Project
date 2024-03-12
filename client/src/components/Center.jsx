@@ -38,7 +38,7 @@ export default function Center() {
     <div className="bg-white py-20 sm:py-15">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl myFont">
+          <p className="text-center mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl myFont">
             Unlock the RealtyHub Experience
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function Center() {
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-16 ">
                 <dt className="text-base font-semibold leading-7 text-gray-900">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-purple-950">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-950">
                     <feature.icon
                       className="h-6 w-6 text-white"
                       aria-hidden="true"

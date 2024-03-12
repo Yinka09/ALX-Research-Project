@@ -1,13 +1,13 @@
 const stats = [
-  { id: 1, name: "Transactions every 24 hours", value: "44 million" },
-  { id: 2, name: "Assets under holding", value: "$119 trillion" },
+  { id: 1, name: "Transactions every 24 hours", value: "20 million" },
+  { id: 2, name: "Assets under holding", value: "$200 trillion" },
   { id: 3, name: "New users annually", value: "46,000" },
 ];
 
 export default function Example() {
   return (
     <div className="bg-white py-24 sm:pb-48 lg:py-20">
-      <h1 className="text-center sm:pb-10 text-3xl font-semibold text-gray-900 sm:text-5xl myFont">
+      <h1 className="text-center px-8 sm:px-0 pb-10 text-3xl font-semibold text-gray-900 sm:text-5xl myFont">
         Trusted by realtors worldwide
       </h1>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

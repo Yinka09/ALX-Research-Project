@@ -168,7 +168,7 @@ export default function Profile() {
     }
   };
   return (
-    <div className="py-3 px-10 max-w-lg mx-auto bg-white opacity-98 my-20 rounded-lg ">
+    <div className="py-3 mx-6 sm:mx-auto px-10 max-w-lg bg-white opacity-98 mt-20 mb-28  rounded-lg ">
       <h1 className="text-3xl font-semibold text-center my-10">Profile</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 px-1">
         <input
@@ -222,12 +222,12 @@ export default function Profile() {
         />
         <button
           disabled={loading}
-          className="bg-purple-950 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
+          className="bg-yellow-800 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
         >
           {loading ? "Loading" : "Update"}
         </button>
         <Link
-          className="bg-violet-700 text-white
+          className="bg-yellow-950 text-white
           p-3
           rounded-lg
           uppercase text-center hover:opacity-95"
@@ -252,12 +252,12 @@ export default function Profile() {
       </div>
 
       <p className="text-red-700 mt-5">{error ? error : ""}</p>
-      <p className="text-green-700 mt-5">
+      <p className="text-green-700 my-5">
         {updateSuccess ? "User is updated successfully!" : ""}
       </p>
       <button
         onClick={handleShowListings}
-        className="text-purple-950 w-full hover:underline font-semibold"
+        className="w-full hover:underline font-semibold"
       >
         Show Listings
       </button>
