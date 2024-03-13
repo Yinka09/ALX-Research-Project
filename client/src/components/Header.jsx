@@ -36,7 +36,7 @@ export default function Header() {
         </Link>
         <form
           onSubmit={handelSubmit}
-          className="bg-slate-100 p-2 rounded-lg flex item-center"
+          className="hidden lg:flex bg-slate-100 p-2 rounded-lg  item-center"
         >
           <input
             type="text"
@@ -55,9 +55,9 @@ export default function Header() {
               className="HAMBURGER-ICON space-y-2"
               onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
             >
-              <span className="block h-0.5 w-8 bg-yellow-950"></span>
-              <span className="block h-0.5 w-8 bg-yellow-950"></span>
-              <span className="block h-0.5 w-8 bg-yellow-950"></span>
+              <span className="block h-0.5 w-8 bg-black"></span>
+              <span className="block h-0.5 w-8 bg-black"></span>
+              <span className="block h-0.5 w-8 bg-black"></span>
             </div>
 
             <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
@@ -80,30 +80,24 @@ export default function Header() {
                 </svg>
               </div>
               <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
-                <NavLink
-                  to="/"
-                  activeClassName="active-link"
-                  onClick={() => setIsNavOpen(false)}
-                >
+                <NavLink to="/" onClick={() => setIsNavOpen(false)}>
                   <li className="border-b border-white my-4 uppercase ">
                     Home
                   </li>
                 </NavLink>
 
-                <NavLink
-                  to="/about"
-                  activeClassName="active-link"
-                  onClick={() => setIsNavOpen(false)}
-                >
+                <NavLink to="/search" onClick={() => setIsNavOpen(false)}>
+                  <li className=" border-b border-white my-4 uppercase">
+                    Search
+                  </li>
+                </NavLink>
+
+                <NavLink to="/about" onClick={() => setIsNavOpen(false)}>
                   <li className=" border-b border-white my-4 uppercase">
                     About
                   </li>
                 </NavLink>
-                <NavLink
-                  to="/profile"
-                  activeClassName="active-link"
-                  onClick={() => setIsNavOpen(false)}
-                >
+                <NavLink to="/profile" onClick={() => setIsNavOpen(false)}>
                   {currentUser ? (
                     <img
                       className="rounded-full h-14 w-14 object-cover"
@@ -120,17 +114,17 @@ export default function Header() {
             </div>
           </section>
           <ul className="DESKTOP-MENU hidden lg:flex ">
-            <NavLink to="/" activeClassName="active-link">
+            <NavLink to="/">
               <li className="sm:inline text-white hover:underline font-semibold pe-5 ">
                 Home
               </li>
             </NavLink>
-            <NavLink to="/about" activeClassName="active-link">
+            <NavLink to="/about">
               <li className=" sm:inline text-white hover:underline font-semibold pe-5">
                 About
               </li>
             </NavLink>
-            <NavLink to="/profile" activeClassName="active-link">
+            <NavLink to="/profile">
               {currentUser ? (
                 <img
                   className="rounded-full h-7 w-7 object-cover"

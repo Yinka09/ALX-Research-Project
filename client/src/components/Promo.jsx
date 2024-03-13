@@ -11,13 +11,13 @@ import bgImage8 from "../assets/images/bg-image8.jpg";
 export default function Promo() {
   return (
     <div className="relative overflow-hidden bg-white">
-      <div className="pb-80 pt-0 sm:pb-40 sm:pt-24 md:pb-80 lg:pb-48 lg:pt-40">
+      <div className="pb-80 pt-0 sm:pb-40  md:pb-40 lg:pb-48 lg:pt-40">
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
-          <div className=" sm:px-0 sm:max-w-lg">
-            <h1 className="text-center sm:text-left text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl myFont">
+          <div className="md:t-0 sm:px-0 sm:max-w-lg">
+            <h1 className=" text-center sm:text-left text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl myFont">
               Your Dream Space Awaits
             </h1>
-            <p className="text-justify sm:text-left mt-4 text-xl text-gray-500">
+            <p className="text-justify mx-2 sm:mx-0 sm:text-left mt-4 text-base  leading-7 text-gray-600">
               Unleashing the Power of Seamless Real Estate Transactions.Explore
               RealtyHub for Exclusive Property Experiences!
             </p>
@@ -93,7 +93,7 @@ export default function Promo() {
               <Link
                 to="/search"
                 href="#"
-                className="inline-block rounded-md border border-transparent bg-yellow-950 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+                className="mx-2 sm:mx-0 inline-block rounded-md border border-transparent bg-yellow-900 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
               >
                 View more
               </Link>

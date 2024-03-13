@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ListingItem from "../components/ListingItem";
 
+import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+
 export default function Search() {
+  const { currentUser } = useSelector((state) => state.user);
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const navigate = useNavigate();
   const [sidebarData, setSidebardata] = useState({
     searchTerm: "",
@@ -114,6 +119,7 @@ export default function Search() {
 
     const searchQuery = urlParams.toString();
     navigate(`/search?${searchQuery}`);
+    setIsNavOpen(false);
   };
 
   const onShowMoreClick = async () => {
@@ -133,7 +139,7 @@ export default function Search() {
 
   return (
     <div className="flex flex-col md:flex-row bg-white pb-32">
-      <div className="p-7 md:p-6 border-b-2 md:border-r-2 md:min-h-screen bg-white bg-opacity-98 sticky top-0 self-start z-10 ">
+      <div className="DESKTOP-MENU hidden lg:flex p-7 md:p-6 border-b-2 md:border-r-2 md:min-h-screen bg-white bg-opacity-98 sticky top-0 self-start z-10 ">
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
           <div className="flex items-center gap-2">
             <label className="whitespace-nowrap font-semibold">
@@ -228,16 +234,155 @@ export default function Search() {
               <option value="createdAt_asc">Oldest</option>
             </select>
           </div>
-          <button className="bg-yellow-950 text-white p-3 rounded-lg uppercase hover:opacity-95">
+          <button className="bg-gray-500 text-white p-3 rounded-lg uppercase hover:opacity-95">
             Search
           </button>
         </form>
       </div>
       <div className="flex-2">
-        <h1 className="text-3xl font-semibold border-b px-5 py-5  bg-white bg-opacity-95">
-          Listing results:
-        </h1>
+        <div className="flex justify-between">
+          <h1 className="text-3xl font-semibold border-b px-5 md:px-10 lg:px-5 py-5  bg-white bg-opacity-95">
+            Listing results:
+          </h1>
 
+          <nav>
+            <section className="MOBILE-MENU flex lg:hidden mt-8 me-5 md:me-10">
+              <div
+                className="HAMBURGER-ICON space-y-2 "
+                onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
+              >
+                <span className="block h-0.5 w-8 bg-gray-500"></span>
+                <span className="block h-0.5 w-8 bg-gray-500"></span>
+                <span className="block h-0.5 w-8 bg-gray-500"></span>
+              </div>
+
+              <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
+                {" "}
+                <div
+                  className="CROSS-ICON absolute top-0 right-0 px-8 py-8"
+                  onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
+                >
+                  <svg
+                    className="h-8 w-8 text-white"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </div>
+                <div className="MENU-LINK-MOBILE-OPEN  items-center p-7 md:p-6   md:min-h-screen  bg-opacity-98 sticky top-0 self-start z-10 ">
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+                    <div className="flex items-center gap-2">
+                      <label className="whitespace-nowrap font-semibold">
+                        Search Term
+                      </label>
+                      <input
+                        type="text"
+                        id="searchTerm"
+                        placeholder="Search..."
+                        className="border rounded-lg p-3 w-full"
+                        value={sidebarData.searchTerm}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="flex gap-2 flex-wrap items-center">
+                      <label className="font-semibold">Type:</label>
+                      <div className="flex gap-2 ">
+                        <input
+                          type="checkbox"
+                          id="all"
+                          className="w-5"
+                          onChange={handleChange}
+                          checked={sidebarData.type === "all"}
+                        />
+                        <span>Rent & Sale</span>
+                      </div>
+                      <div className="flex gap-2 ">
+                        <input
+                          type="checkbox"
+                          id="rent"
+                          className="w-5"
+                          onChange={handleChange}
+                          checked={sidebarData.type === "rent"}
+                        />
+                        <span>Rent</span>
+                      </div>
+                      <div className="flex gap-2 ">
+                        <input
+                          type="checkbox"
+                          id="sale"
+                          className="w-5"
+                          onChange={handleChange}
+                          checked={sidebarData.type === "sale"}
+                        />
+                        <span>Sale</span>
+                      </div>
+                      <div className="flex gap-2 ">
+                        <input
+                          type="checkbox"
+                          id="offer"
+                          className="w-5"
+                          onChange={handleChange}
+                          checked={sidebarData.offer}
+                        />
+                        <span>Offer</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-2 flex-wrap items-center">
+                      <label className="font-semibold">Amenities:</label>
+                      <div className="flex gap-2 ">
+                        <input
+                          type="checkbox"
+                          id="parking"
+                          className="w-5"
+                          onChange={handleChange}
+                          checked={sidebarData.parking}
+                        />
+                        <span>Parking</span>
+                      </div>
+                      <div className="flex gap-2 ">
+                        <input
+                          type="checkbox"
+                          id="furnished"
+                          className="w-5"
+                          onChange={handleChange}
+                          checked={sidebarData.furnished}
+                        />
+                        <span>Furnished</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center text-slate-700 gap-2">
+                      <label className="font-semibold text-white">Sort:</label>
+                      <select
+                        onChange={handleChange}
+                        defaultValue={"Created_at_desc"}
+                        id="sort_order"
+                        className="border rounded-lg p-3"
+                      >
+                        <option value="regularPrice_desc">
+                          Price high to low
+                        </option>
+                        <option value="regularPrice_asc">
+                          Price low to high
+                        </option>
+                        <option value="createdAt_desc">Latest</option>
+                        <option value="createdAt_asc">Oldest</option>
+                      </select>
+                    </div>
+                    <button className="bg-white text-slate-700 p-3 rounded-lg uppercase hover:opacity-90">
+                      Search
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </section>
+          </nav>
+        </div>
         <div className="p-7 flex flex-wrap gap-4 reveal ">
           {!loading && listings.length === 0 && (
             <p className="text-xl text-slate-700">No listing found!</p>
@@ -257,7 +402,7 @@ export default function Search() {
         {showMore && (
           <button
             onClick={onShowMoreClick}
-            className="text-white font-semibold hover:underline p-3 block text-center mx-auto text-xs rounded-lg bg-yellow-950 hover:opacity-90"
+            className="text-white font-semibold hover:underline p-3 block text-center mx-auto text-xs rounded-lg bg-slate-700 hover:opacity-90"
           >
             Show More
           </button>

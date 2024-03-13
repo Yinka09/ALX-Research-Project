@@ -1,18 +1,18 @@
 export default function Footer() {
   return (
-    <footer className="bg-yellow-950 text-white dark:text-gray-50 pt-5 border-t border-gray-300">
+    <footer className="bg-white text-slate-700 dark:text-gray-50 pt-5 border-t border-gray-300">
       <div
         className="md:px-10 flex flex-col p-4 mx-auto md:p-2 lg:flex-row 
       "
       >
-        <ul className=" self-center py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
+        <ul className="text-slate-700 self-center py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
           <li className="font-bold">RealtyHub</li>
           <li>Rent</li>
           <li>Sale</li>
           <li>Contact</li>
         </ul>
         <div className="flex flex-col justify-center pt-6 lg:pt-0">
-          <div className="flex justify-center space-x-4 text-white">
+          <div className="flex justify-center space-x-4 text-slate-700">
             <a
               rel="noopener noreferrer"
               href="https://github.com/Yinka09/ALX-Research-Project"
