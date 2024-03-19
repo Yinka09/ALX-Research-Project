@@ -38,7 +38,7 @@ body {
 
 .home {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
-    url("../src/assets/images/my-newimg.jpg") no-repeat center center fixed;
+    url("../src/assets/images/bg-image2.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
