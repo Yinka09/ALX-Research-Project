@@ -18,7 +18,7 @@ export default function Footer() {
               href="https://github.com/Yinka09/ALX-Research-Project"
               target="_blank"
               title="GitHub"
-              className="flex items-center justify-center w-10 h-10 rounded-full dark:bg-violet-400 dark:text-gray-900"
+              className="flex items-center justify-center w-10 h-10 rounded-full  dark:text-gray-900"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               href="#"
               title="Email"
-              className="flex items-center justify-center w-10 h-10 rounded-full dark:bg-violet-400 dark:text-gray-900"
+              className="flex items-center justify-center w-10 h-10 rounded-full "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               href="#"
               title="Instagram"
-              className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-400 dark:text-gray-900"
+              className="flex items-center justify-center w-10 h-10 rounded-full sm:w-10 sm:h-10 "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               href="#"
               title="Twitter"
-              className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-400 dark:text-gray-900"
+              className="flex items-center justify-center w-10 h-10 rounded-full sm:w-10 sm:h-10 "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
