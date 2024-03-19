@@ -10,10 +10,12 @@ import OAuth from "../components/OAuth";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
+  const [showerror, setShowError] = useState(false);
   // Add error and loading effects
   const { loading, error } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -34,14 +36,17 @@ export default function SignIn() {
       const data = await res.json();
       if (data.success === false) {
         dispatch(signInFailure(data.message));
+        setShowError(true);
         return;
       }
       dispatch(signInSuccess(data));
+      dispatch(signInFailure(null));
       navigate("/");
 
       console.log(formData);
     } catch (error) {
       dispatch(signInFailure(error.message));
+      setShowError(true);
     }
   };
 
@@ -77,7 +82,7 @@ export default function SignIn() {
           <span className="text-blue-700">Sign up</span>
         </Link>
       </div>
-      {error && <p className="text-red-500 mt-5">{error}</p>}
+      {showerror && <p className="text-red-500 mt-5">{error}</p>}
     </div>
   );
 }

@@ -241,7 +241,7 @@ export default function Search() {
       </div>
       <div className="flex-2">
         <div className="flex justify-between">
-          <h1 className="text-3xl font-semibold border-b px-5 md:px-10 lg:px-5 py-5  bg-white bg-opacity-95">
+          <h1 className="text-3xl font-semibold px-5 md:px-10 lg:px-5 py-5  bg-white bg-opacity-95">
             Listing results:
           </h1>
 
@@ -285,7 +285,7 @@ export default function Search() {
                         type="text"
                         id="searchTerm"
                         placeholder="Search..."
-                        className="border rounded-lg p-3 w-full"
+                        className="border rounded-lg p-3 w-full text-black"
                         value={sidebarData.searchTerm}
                         onChange={handleChange}
                       />
@@ -349,7 +349,7 @@ export default function Search() {
                         <input
                           type="checkbox"
                           id="furnished"
-                          className="w-5"
+                          className="w-5 text-slate-700"
                           onChange={handleChange}
                           checked={sidebarData.furnished}
                         />

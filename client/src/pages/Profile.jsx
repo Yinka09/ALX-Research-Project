@@ -55,6 +55,7 @@ export default function Profile() {
     uploadTask.on(
       "state_changed",
       (snapshot) => {
+        setFileUploadError(false);
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setFilePerc(Math.round(progress));
