@@ -1,3 +1,4 @@
+// Functional component for Footer
 export default function Footer() {
   return (
     <footer className="bg-white text-slate-700 dark:text-gray-50 pt-5 border-t border-gray-300">

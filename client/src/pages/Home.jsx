@@ -147,7 +147,7 @@ export default function Home() {
                   Show more offers...
                 </Link>
               </div>
-              <div className="flex flex-wrap xl:flex-nowrap gap-4">
+              <div className="reveal flex flex-wrap xl:flex-nowrap gap-4">
                 {offerListings.map((listing) => (
                   <ListingItem listing={listing} key={listing._id} />
                 ))}
@@ -167,7 +167,7 @@ export default function Home() {
                   Show more places for rent...
                 </Link>
               </div>
-              <div className="flex flex-wrap xl:flex-nowrap gap-4">
+              <div className="reveal flex flex-wrap xl:flex-nowrap gap-4">
                 {rentListings.map((listing) => (
                   <ListingItem listing={listing} key={listing._id} />
                 ))}

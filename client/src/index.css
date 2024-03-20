@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  background: rgba(0, 0, 0, 0.9)
-    url("../src/assets/images/pexels-binyamin-mellish-106399.jpg") no-repeat
-    center center fixed;
-  background-size: cover;
-  background-position: right top;
-  height: 100vh;
-} */
-
 body {
   background-color: white;
   font-family: "Poppins", sans-serif;
@@ -89,20 +80,3 @@ body {
     z-index: -1;
   }
 }
-
-/* @media screen and (max-width: 600px) {
-  .home {
-    position: fixed;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
-      url("../src/assets/images/bg-image2.jpg") no-repeat center center;
-    transform: translateZ(0);
-    will-change: transform;
-  }
-} */

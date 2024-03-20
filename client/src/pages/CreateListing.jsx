@@ -9,7 +9,9 @@ import { app } from "../firebase";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+// Functional component for creating a listing
 export default function CreateListing() {
+  // Redux state, state variables and navigation hook
   const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const [files, setFiles] = useState([]);
@@ -32,7 +34,9 @@ export default function CreateListing() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  console.log(formData);
+  // console.log(formData);
+
+  // Handle image submission
   const handleImageSubmit = (e) => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
@@ -62,6 +66,7 @@ export default function CreateListing() {
     }
   };
 
+  // Store image in Firebase Storage
   const storeImage = async (file) => {
     return new Promise((resolve, reject) => {
       const storage = getStorage(app);
@@ -87,6 +92,7 @@ export default function CreateListing() {
     });
   };
 
+  // Handle removing image from formData
   const handleRemoveImage = (index) => {
     setFormData({
       ...formData,
@@ -94,6 +100,7 @@ export default function CreateListing() {
     });
   };
 
+  // Handle form input changes
   const handleChange = (e) => {
     if (e.target.id === "sale" || e.target.id === "rent") {
       setFormData({
@@ -125,6 +132,7 @@ export default function CreateListing() {
     }
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -157,6 +165,8 @@ export default function CreateListing() {
       setLoading(false);
     }
   };
+
+  // JSX for the component
   return (
     <main className="mx-6 sm:mx-auto max-w-4xl bg-white my-10 rounded-lg opacity-98 pt-10 pb-20 px-10 ">
       <h1 className="text-3xl font-semibold text-center my-7">

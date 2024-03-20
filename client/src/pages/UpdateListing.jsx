@@ -9,10 +9,14 @@ import { app } from "../firebase";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 
+// Functional component for Update listing functionality
 export default function CreateListing() {
+  // Redux state and hooks
   const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const params = useParams();
+
+  // Component state
   const [files, setFiles] = useState([]);
   const [formData, setFormData] = useState({
     imageUrls: [],
@@ -35,6 +39,7 @@ export default function CreateListing() {
 
   //   console.log(formData);
 
+  // Fetch listing data on component mount
   useEffect(() => {
     const fetchListing = async () => {
       const listingId = params.listingId;
@@ -47,6 +52,8 @@ export default function CreateListing() {
     };
     fetchListing();
   }, []);
+
+  // Handle image upload
   const handleImageSubmit = (e) => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
@@ -76,6 +83,7 @@ export default function CreateListing() {
     }
   };
 
+  // Store image in Firebase Storage
   const storeImage = async (file) => {
     return new Promise((resolve, reject) => {
       const storage = getStorage(app);
@@ -101,6 +109,7 @@ export default function CreateListing() {
     });
   };
 
+  // Handle image removal
   const handleRemoveImage = (index) => {
     setFormData({
       ...formData,
@@ -108,7 +117,9 @@ export default function CreateListing() {
     });
   };
 
+  // Handle form input change
   const handleChange = (e) => {
+    // Update form data based on input type
     if (e.target.id === "sale" || e.target.id === "rent") {
       setFormData({
         ...formData,
@@ -139,6 +150,7 @@ export default function CreateListing() {
     }
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -171,6 +183,8 @@ export default function CreateListing() {
       setLoading(false);
     }
   };
+
+  // JSX for the component
   return (
     <main className="mx-6 sm:mx-auto max-w-4xl  bg-white mt-20 rounded-lg bg-opacity-98 pt-10 pb-20 px-10 mb-32">
       <h1 className="text-3xl font-semibold text-center my-7">

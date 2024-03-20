@@ -6,6 +6,7 @@ import {
   ChatBubbleLeftIcon,
 } from "@heroicons/react/24/outline";
 
+// Array of features with their details
 const features = [
   {
     name: "User Registration",
@@ -33,7 +34,9 @@ const features = [
   },
 ];
 
+// Functional component for the feature section
 export default function Center() {
+  // Render component
   return (
     <div className="bg-white py-20 sm:py-15">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -42,7 +45,7 @@ export default function Center() {
             Unlock the RealtyHub Experience
           </p>
         </div>
-        <div className="mx-2 mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl">
+        <div className="mx-2 mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl reveal">
           <dl className="grid max-w-xl grid-cols-1 gap-x-28 gap-y-10 md:max-w-none lg:grid-cols-2 md:gap-y-10 text-justify">
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-16 ">

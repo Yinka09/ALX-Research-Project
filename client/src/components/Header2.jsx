@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+// Alternative header
 export default function Header2() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
 

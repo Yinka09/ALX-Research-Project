@@ -17,8 +17,10 @@ import {
 } from "react-icons/fa";
 import Contact from "../components/Contact";
 
+// Functional component for listing details
 export default function Listing() {
   SwiperCore.use([Navigation]);
+  // State variables
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -26,6 +28,8 @@ export default function Listing() {
   const [contact, setContact] = useState(false);
   const params = useParams();
   const { currentUser } = useSelector((state) => state.user);
+
+  // Fetch listing data based on listingId from URL params
   useEffect(() => {
     const fetchListing = async () => {
       try {
@@ -48,6 +52,7 @@ export default function Listing() {
     fetchListing();
   }, [params.listingId]);
 
+  // JSX for the component
   return (
     <main className="bg-white pb-20 lg:pb-10">
       {loading && <p className="text-center py-10 my-7 text-2xl">Loading...</p>}

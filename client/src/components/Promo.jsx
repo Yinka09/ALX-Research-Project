@@ -8,7 +8,9 @@ import bgImage6 from "../assets/images/bg-image6.jpg";
 import bgImage7 from "../assets/images/bg-image7.jpg";
 import bgImage8 from "../assets/images/bg-image8.jpg";
 
+// Functional component for Promo section
 export default function Promo() {
+  // Render component
   return (
     <div className="relative overflow-hidden bg-white">
       <div className="pb-80 pt-0 sm:pb-40  md:pb-40 lg:pb-48 lg:pt-40">

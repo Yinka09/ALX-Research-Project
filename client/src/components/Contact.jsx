@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+// Functional component for Contact section
 export default function Contact({ listing }) {
+  // State variables
   const [landlord, setLandlord] = useState(null);
   const [message, setMessage] = useState("");
 
+  // Function to handle message change
   const onChange = (e) => {
     setMessage(e.target.value);
   };
 
+  // Effect to fetch landlord information
   useEffect(() => {
     const fetchLandLord = async () => {
       try {
@@ -21,6 +25,8 @@ export default function Contact({ listing }) {
     };
     fetchLandLord();
   }, [listing.userRef]);
+
+  // Render component
   return (
     <>
       {landlord && (

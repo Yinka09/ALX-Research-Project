@@ -15,6 +15,7 @@ import Search from "./pages/Search";
 
 export default function App() {
   return (
+    // Main container for the app
     <div className="home">
       <BrowserRouter>
         <Header />

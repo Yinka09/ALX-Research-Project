@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
 
+// Functional component for ListingItem
 export default function ListingItem({ listing }) {
+  // Effect for reveal animation
   useEffect(() => {
     function reveal() {
       var reveals = document.querySelectorAll(".reveal");
@@ -22,12 +24,13 @@ export default function ListingItem({ listing }) {
 
     window.addEventListener("scroll", reveal);
 
-    // Don't forget to remove the event listener when the component unmounts
+    // Remove the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", reveal);
     };
   }, []); // Empty dependency array means this effect runs once after the initial render
 
+  // JSX for the component
   return (
     <div className=" reveal mb-7 bg-white bg-opacity-98 shadow-md hover:shadow-lg transition-shadow overflow-hidden myborder w-full sm:w-[280px] md:w-[260px] lg:w-[200px] xl:w-[390px] mx-auto">
       <Link to={`/listing/${listing._id}`}>

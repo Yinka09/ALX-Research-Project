@@ -5,10 +5,9 @@ import ListingItem from "../components/ListingItem";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
+// Functional component for Search functionality
 export default function Search() {
-  const { currentUser } = useSelector((state) => state.user);
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const navigate = useNavigate();
+  // Component state
   const [sidebarData, setSidebardata] = useState({
     searchTerm: "",
     type: "all",
@@ -18,13 +17,21 @@ export default function Search() {
     sort: "created_at",
     order: "desc",
   });
+
+  // Redux selector
+  const { currentUser } = useSelector((state) => state.user);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  // Router hooks
+  const navigate = useNavigate();
+
+  // State hooks
   const [loading, setLoading] = useState(false);
   const [listings, setListings] = useState([]);
   const [showMore, setShowMore] = useState(false);
-  // console.log(listings);
-  //   console.log(sidebarData);
 
   useEffect(() => {
+    // Parse URL search params to get search filters
     const urlParams = new URLSearchParams(location.search);
     const searchTermFromUrl = urlParams.get("searchTerm");
     const typeFromUrl = urlParams.get("type");
@@ -34,6 +41,7 @@ export default function Search() {
     const sortFromUrl = urlParams.get("sort");
     const orderFromUrl = urlParams.get("order");
 
+    // Set sidebar data based on URL search params
     if (
       searchTermFromUrl ||
       typeFromUrl ||
@@ -54,6 +62,7 @@ export default function Search() {
       });
     }
 
+    // Fetch listings based on search filters
     const fetchListings = async () => {
       setLoading(true);
       setShowMore(false);
@@ -72,6 +81,7 @@ export default function Search() {
     fetchListings();
   }, [location.search]);
 
+  // Handle form input change
   const handleChange = (e) => {
     if (
       e.target.id === "all" ||
@@ -105,9 +115,11 @@ export default function Search() {
     }
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Construct URL search params
     const urlParams = new URLSearchParams();
     urlParams.set("searchTerm", sidebarData.searchTerm);
     urlParams.set("type", sidebarData.type);
@@ -117,11 +129,13 @@ export default function Search() {
     urlParams.set("sort", sidebarData.sort);
     urlParams.set("order", sidebarData.order);
 
+    // Navigate to search page with updated search filters
     const searchQuery = urlParams.toString();
     navigate(`/search?${searchQuery}`);
     setIsNavOpen(false);
   };
 
+  // Load more listings
   const onShowMoreClick = async () => {
     const numberOfListings = listings.length;
     const startIndex = numberOfListings;
@@ -137,6 +151,7 @@ export default function Search() {
     setListings([...listings, ...data]);
   };
 
+  // JSX for the component
   return (
     <div className="flex flex-col md:flex-row bg-white pb-32">
       <div className="DESKTOP-MENU hidden lg:flex p-7 md:p-6 border-b-2 md:border-r-2 md:min-h-screen bg-white bg-opacity-98 sticky top-0 self-start z-10 ">

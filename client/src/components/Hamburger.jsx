@@ -3,6 +3,7 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
 
+// Functional component for Hamburger Menu
 const HamburgerMenu = ({ toggleMenu, isOpen }) => {
   return (
     <div

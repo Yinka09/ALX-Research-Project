@@ -2,21 +2,26 @@ import React, { useState, useRef } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
+// Array of statistics
 const stats = [
   { id: 1, name: "Transactions every 24 hours", value: "20 million" },
   { id: 2, name: "Assets under holding", value: "$200 trillion" },
   { id: 3, name: "New users annually", value: "46,000" },
 ];
 
+// Functional component for displaying statistics with CountUp animation
 export default function Example() {
+  // State variables
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({ triggerOnce: false });
   const startAnimationRef = useRef(null);
 
+  // Check if the component is in view and set isVisible state
   if (inView && !isVisible) {
     setIsVisible(true);
   }
 
+  // Render component
   return (
     <div className="bg-white py-24  lg:py-20">
       <h1 className="text-center px-8 sm:px-0 pb-10 font-semibold text-gray-900 text-4xl sm:text-6xl myFont">

@@ -2,18 +2,23 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../components/OAuth";
 
+// Functional component for Signup
 export default function SignUp() {
+  // Component state
   const [formData, setFormData] = useState({});
-  // Add error and loading effects
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  // Handle input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.id]: e.target.value,
     });
   };
+
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -41,6 +46,8 @@ export default function SignUp() {
       setError(error.message);
     }
   };
+
+  // JSX for the component
   return (
     <div className="py-10 px-10 max-w-lg mx-6 sm:mx-auto bg-white opacity-98 mt-20 mb-28 rounded-lg">
       <h1 className="text-3xl text-center font-semibold my-7">Sign Up</h1>

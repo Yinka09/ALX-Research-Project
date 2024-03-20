@@ -4,12 +4,15 @@ import { FaSearch } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+// Functional component for Header
 export default function Header() {
+  // Component use states
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { currentUser } = useSelector((state) => state.user);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
+  // Function to handle form submission for search
   const handelSubmit = (e) => {
     e.preventDefault();
     const urlParams = new URLSearchParams(window.location.search);
@@ -18,6 +21,7 @@ export default function Header() {
     navigate(`/search?${searchQuery}`);
   };
 
+  // Effect to set search term from URL parameter
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const searchTermFromUrl = urlParams.get("searchTerm");
@@ -25,6 +29,8 @@ export default function Header() {
       setSearchTerm(searchTermFromUrl);
     }
   }, [location.search]);
+
+  // Render component
   return (
     <header className="bg-transparent">
       <div className="flex justify-between items-center max-w-6xl mx-auto py-3 px-5 md:px-10">
@@ -49,6 +55,8 @@ export default function Header() {
             <FaSearch className="text-slate-600" />
           </button>
         </form>
+
+        {/* Hamburger for mobile view */}
         <nav>
           <section className="MOBILE-MENU flex lg:hidden">
             <div
@@ -113,6 +121,8 @@ export default function Header() {
               </ul>
             </div>
           </section>
+
+          {/* List for laptop/Desktop view */}
           <ul className="DESKTOP-MENU hidden lg:flex ">
             <NavLink to="/">
               <li className="sm:inline text-white hover:underline font-semibold pe-5 ">

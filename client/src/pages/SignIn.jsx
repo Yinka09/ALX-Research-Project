@@ -8,20 +8,26 @@ import {
 } from "../redux/user/userSlice";
 import OAuth from "../components/OAuth";
 
+// Functional component for Signin
 export default function SignIn() {
+  // Component state
   const [formData, setFormData] = useState({});
   const [showerror, setShowError] = useState(false);
-  // Add error and loading effects
+
+  // Redux hooks
   const { loading, error } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  // Handle input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.id]: e.target.value,
     });
   };
+
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -50,6 +56,7 @@ export default function SignIn() {
     }
   };
 
+  // JSX for the component
   return (
     <div className="py-10 px-10 max-w-lg mx-6 sm:mx-auto bg-white opacity-98 mt-20 mb-32 rounded-lg ">
       <h1 className="text-3xl text-center font-semibold my-3">Sign In</h1>

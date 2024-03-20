@@ -21,7 +21,9 @@ import {
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
+// Functional component for user profile
 export default function Profile() {
+  // Component, Redux and Refs states
   const fileRef = useRef(null);
   const { currentUser, loading, error } = useSelector((state) => state.user);
   const [file, setFile] = useState(undefined);
@@ -40,12 +42,14 @@ export default function Profile() {
   // request.resource.size < 2 * 1024 * 1024 &&
   //  request.resource.contentType.matches('image/.*');
 
+  // Effect to handle file upload
   useEffect(() => {
     if (file) {
       handleFileUpload(file);
     }
   }, [file]);
 
+  // Function to handle file upload using Firebase Storage
   const handleFileUpload = (file) => {
     const storage = getStorage(app);
     const fileName = new Date().getTime() + file.name;
@@ -71,10 +75,12 @@ export default function Profile() {
     );
   };
 
+  // Function to handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -98,6 +104,7 @@ export default function Profile() {
     }
   };
 
+  // Function to handle user deletion
   const handleDeleteUser = async () => {
     try {
       dispatch(deleteUserStart());
@@ -113,6 +120,8 @@ export default function Profile() {
       dispatch(deleteUserFailure(error.message));
     }
   };
+
+  // Function to handle user sign out
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
@@ -128,6 +137,7 @@ export default function Profile() {
     }
   };
 
+  // Function to fetch user listings
   const handleShowListings = async () => {
     try {
       setShowListingsError(false);
@@ -150,6 +160,7 @@ export default function Profile() {
     }
   };
 
+  // Function to handle listing deletion
   const handleListingDelete = async (listingId) => {
     try {
       const res = await fetch(`/api/listing/delete/${listingId}`, {
@@ -168,6 +179,8 @@ export default function Profile() {
       console.log(error.message);
     }
   };
+
+  // JSX for the component
   return (
     <div className="py-3 mx-6 sm:mx-auto px-10 max-w-lg bg-white opacity-98 mt-20 mb-28  rounded-lg ">
       <h1 className="text-3xl font-semibold text-center my-10">Profile</h1>

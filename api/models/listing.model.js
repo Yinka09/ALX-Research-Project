@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// Define the listing schema
 const listingSchema = new mongoose.Schema(
   {
     name: {
@@ -55,9 +56,10 @@ const listingSchema = new mongoose.Schema(
       required: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true } // Adds createdAt and updatedAt fields to the schema
 );
 
+// Create a Listing model from the listing schema
 const Listing = mongoose.model("Listing", listingSchema);
 
 export default Listing;

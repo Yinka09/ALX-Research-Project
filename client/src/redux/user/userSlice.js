@@ -1,15 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Initial state for user slice
 const initialState = {
   currentUser: null,
   error: null,
   loading: false,
 };
 
+// Create user slice
 const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    // Actions for signing in
     signInStart: (state) => {
       state.loading = true;
     },
@@ -22,6 +25,8 @@ const userSlice = createSlice({
       state.error = action.payload;
       state.loading = false;
     },
+
+    // Actions for updating user profile
     updateUserStart: (state) => {
       state.loading = true;
     },
@@ -34,6 +39,8 @@ const userSlice = createSlice({
       state.error = action.payload;
       state.loading = false;
     },
+
+    // Actions for deleting user profile
     deleteUserStart: (state) => {
       state.loading = true;
     },
@@ -46,6 +53,8 @@ const userSlice = createSlice({
       state.error = action.payload;
       state.loading = false;
     },
+
+    // Actions for signing out
     signOutUserStart: (state) => {
       state.loading = true;
     },
@@ -61,6 +70,7 @@ const userSlice = createSlice({
   },
 });
 
+// Export actions and reducer
 export const {
   signInStart,
   signInSuccess,

@@ -1,6 +1,8 @@
 import React from "react";
 
+// Functional component for About page
 export default function About() {
+  // JSX for the component
   return (
     <div className="mx-6 px-4 sm:px-20 max-w-6xl md:mx-20 lg:mx-36 xl:mx-auto text-justify bg-white  mt-20 mb-28 py-12 rounded-lg shadow-lg">
       <h1 className="px-4 text-4xl font-bold mb-8 text-slate-800 text-center">
