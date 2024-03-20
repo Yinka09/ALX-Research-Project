@@ -80,12 +80,12 @@ export default function Home() {
     <div className="my-hero">
       {/* top */}
       <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto min-h-screen justify-center">
-        <h1 className="text-white font-bold text-6xl md:text-7xl lg:text-7xl md:ps-4 myFont text-center sm:text-left  md:text-left">
+        <h1 className="sm:text-white font-bold text-6xl md:text-7xl lg:text-7xl md:ps-4 myFont text-center sm:text-left  md:text-left">
           Find your next <span class="text-center md:hidden ">home </span>
           <br />
           <span className="hidden md:flex">perfect place with ease</span>
         </h1>
-        <div className="text-zinc-200 text-md sm:text-sm md:ps-4 myFont text-center sm:text-left  md:text-left">
+        <div className="sm:text-zinc-200 text-md sm:text-sm md:ps-4 myFont text-center sm:text-left  md:text-left">
           RealtyHub is the best place to find your next perfect place to live.
           <br />
           <span className="hidden md:flex">
