@@ -33,7 +33,7 @@ export default function Header() {
   // Render component
   return (
     <header className="bg-transparent">
-      <div className="flex justify-between items-center max-w-6xl mx-auto py-3 px-5 md:px-10">
+      <div className="flex justify-between items-center max-w-6xl mx-auto py-3 lg:pt-5 px-5 md:px-10">
         <Link to="/">
           <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
             <span className="text-violet-100">Realty</span>

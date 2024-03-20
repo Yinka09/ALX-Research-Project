@@ -77,7 +77,7 @@ export default function Home() {
   }, []); // Empty dependency array means this effect runs once after the initial render
 
   return (
-    <div>
+    <div className="my-hero">
       {/* top */}
       <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto min-h-screen justify-center">
         <h1 className="text-white font-bold text-6xl md:text-7xl lg:text-7xl md:ps-4 myFont text-center sm:text-left  md:text-left">
