@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
-
 body {
   background-color: white;
   font-family: "Poppins", sans-serif;
@@ -21,12 +15,6 @@ body {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
     url("../src/assets/images/bg-image2.jpg") no-repeat center center fixed;
   background-size: cover;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
 }
 
 .myborder {
@@ -93,8 +81,9 @@ body {
   }
 } */
 @media screen and (max-width: 600px) {
-  .my-hero {
-    background: url("../src/assets/images/bg-image9.png") no-repeat center
-      center scroll;
+  .home {
+    background: url("../src/assets/images/bg-image2-resize1.jpg") no-repeat
+      center center scroll;
+    background-size: cover;
   }
 }
